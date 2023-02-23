@@ -1,3 +1,5 @@
+const prompt = require ('prompt-sync')();
+
 console.log("++++++++++++++++++++++++++++++++++++++");
 console.log("SISTEMA PARA CAPTURA DE CALIFICACIONES");
 console.log("++++++++++++++++++++++++++++++++++++++");
@@ -15,10 +17,12 @@ do{
     console.log("\n ");
     if(materia==1){
         var califEsp = prompt("Ingrese la calificación de la materia ESPAÑOL: ");
+
         if(califEsp>6 && califEsp<=10){
         console.log("¡Calificación capturada Exitosamente! \n");
         console.log("¿Desea ingresar otra calificación?");
             var continuar = prompt("Selecione S para SI o N para NO: ");
+
             if(continuar=="S" || continuar=="s"){
             
             }else if(continuar=="N" || continuar=="n"){
@@ -43,6 +47,7 @@ do{
             if(continuar=="S" || continuar=="s"){
             
             }else if(continuar=="N" || continuar=="n"){
+                
                 console.log("Cerrando sesión. Hasta pronto.");
                 break;
             }else{
@@ -62,6 +67,7 @@ do{
             if(continuar=="S" || continuar=="s"){
             
             }else if(continuar=="N" || continuar=="n"){
+                
                 console.log("Cerrando sesión. Hasta pronto.");
                 break;
             }else{
@@ -79,3 +85,13 @@ do{
     }
 
 }while(materia>0 && materia<=3);
+
+if(califEsp==undefined ||califMat==undefined || califCn==undefined){
+    console.log("No se puede calcular el promedio. Capture la(s) calificacion(es) faltante(s)");
+    
+}else{
+    console.log("\n");
+    console.log("Los datos capturados son: ");
+    console.log("Alumno: "+ nombre + " (Español: " + califEsp +")" + " (Matematicas: "+ califMat +")" + " (Ciencias Naturales: " + califCn+")");
+    console.log("Promedio:" + (parseInt(califEsp)+parseInt(califMat)+parseInt(califCn))/3);
+}
